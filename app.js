@@ -3,7 +3,12 @@ const cors = require("cors"); // Import the CORS middleware
 const app = express();
 
 // Use CORS middleware
-app.use(cors()); // This will enable CORS for all routes
+app.use(
+  cors({
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "OPTIONS"], // Specify allowed methods
+  })
+); // This will enable CORS for all routes
 
 const port = 5000;
 
