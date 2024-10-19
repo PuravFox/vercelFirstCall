@@ -22,6 +22,11 @@ const getRandomThought = () => {
   return thoughts[randomIndex];
 };
 
+// Define basic
+app.get("/", (req, res) => {
+  res.json({ seem: "home" });
+});
+
 // Define a route to get a thought of the day
 app.get("/thought", (req, res) => {
   const thought = getRandomThought();
